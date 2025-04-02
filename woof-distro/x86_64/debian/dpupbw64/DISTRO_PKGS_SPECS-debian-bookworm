@@ -417,7 +417,7 @@ yes|peasyglue||exe,dev,doc,nls
 yes|peasypdf||exe,dev,doc,nls
 yes|peasyport||exe,dev,doc,nls
 yes|peasyprint||exe,dev,doc,nls
-yes|peasyscale||exe,dev,doc,nls
+yes|peasyscale_64bit||exe,dev,doc,nls
 yes|picom||exe,dev,doc,nls
 yes|picom-gtk||exe,dev,doc,nls
 yes|pRun||exe,dev,doc,nls
