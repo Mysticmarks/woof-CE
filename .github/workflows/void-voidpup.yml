@@ -20,6 +20,7 @@ jobs:
     with:
       repo: ${{ github.repository }}
       ref: ${{ github.ref }}
+      runner: ubuntu-22.04
       arch: ${{ matrix.arch }}
       compat-distro: void
       compat-distro-version: ${{ matrix.compat-distro-version }}
