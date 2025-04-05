@@ -18,8 +18,8 @@ case $DLPKG in
 		RETVAL=$?
 		;;
 	*.xbps)
-		#tar --force-local --zstd -xf "$DLPKG" >/dev/null 2>&1
-		RETVAL=0 #RETVAL=$?
+		tar --force-local --zstd -xf "$DLPKG" >/dev/null 2>&1
+		RETVAL=$?
 		;;
 	*.sfs)
 		RETVAL=0
