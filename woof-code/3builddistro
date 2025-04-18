@@ -538,13 +538,14 @@ cd $WKGDIR/sandbox3/rootfs-complete
 [ "$DISTRO_BINARY_COMPAT" = "void" ] && [ $CROSSBUILD -eq 0 -o -n "$QEMU" ] && chroot . ldconfig
 $WKGDIR/sandbox3/pinstall.sh
 ( ### new {a,f,y}drv stuff - execute the '{a,f,y}pinstall.sh'
+set -x
 	cd $WKGDIR/sandbox3/
 	for post_inst in adrv fdrv ydrv;do
 		[ -d "$post_inst" ] || continue
 		echo "configuring $post_inst"
 		prefix=${post_inst:0:1}
-		[ -f ${prefix}pinstall.sh ] && { [ -d "$post_inst" ] && (cd ${post_inst};$WKGDIR/sandbox3/${prefix}pinstall.sh)}
-		[ -f ${prefix}pinstall.sh ] && rm ${prefix}pinstall.sh
+#		[ -f ${prefix}pinstall.sh ] && { [ -d "$post_inst" ] && (cd ${post_inst};$WKGDIR/sandbox3/${prefix}pinstall.sh)}
+#		[ -f ${prefix}pinstall.sh ] && rm ${prefix}pinstall.sh
 	done
 )
 if [ -f /tmp/3builddistro_end_of_pinstall ] ; then
