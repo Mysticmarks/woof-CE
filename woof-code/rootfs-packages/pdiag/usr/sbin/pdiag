@@ -69,7 +69,7 @@ cp -f /etc/modules.conf $DIAGDIR/ 2> /dev/null
 cat /proc/devices > $DIAGDIR/proc_devices.txt 2> /dev/null
 cp -f /tmp/usb_modeswitch_scsi-info.log $DIAGDIR/ 2> /dev/null
 cp -f /etc/rc.d/rc.local $DIAGDIR/ 2> /dev/null
-ifconfig > $DIAGDIR/ifconfig.txt 2> /dev/null
+ip addr show > $DIAGDIR/ifconfig.txt 2> /dev/null
 cp -f /root/.packages/user-installed-packages $DIAGDIR/ 2> /dev/null
 cp -f /etc/rc.d/pupstate $DIAGDIR/ 2> /dev/null
 cp -f /tmp/xerrs.log $DIAGDIR/ 2> /dev/null
