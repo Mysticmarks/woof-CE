@@ -51,9 +51,9 @@ get_data()
 
 	# tab 1 - interfaces
 	var01=`echo $(gettext 'Hostname:') "$HOSTNAME"`
-	var02="`ifconfig | tr '>' ')' | tr '<' '('`" #130216 mavrothal: < > mess up gtkdialog.
-	# tab 3 - routing
-	var03="`route -n | sed -e 's%Kernel IP routing table%%'`"
+        var02="`ip addr show | tr '>' ')' | tr '<' '('`" #130216 mavrothal: < > mess up gtkdialog.
+        # tab 3 - routing
+        var03="`ip route`"
 	# tab 2
 	var04="DNS:"
 	var05=`cat /etc/resolv.conf`
