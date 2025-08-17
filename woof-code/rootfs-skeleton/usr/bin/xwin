@@ -189,7 +189,7 @@ fi
 # automatic network reconnect. refer /usr/sbin/hostname-set
 if [ -f /tmp/services/network_default_reconnect_required_flag ];then
 	rm -f /tmp/services/network_default_reconnect_required_flag
-	IFCONFIG="`ifconfig | grep '^[pwe]' | grep -v 'wmaster'`" #precaution.
+        IFCONFIG="$(ip -o link show up | awk -F': ' '{print $2}' | grep -E '^[pwe]' | grep -v 'wmaster')" #precaution.
 	[ "$IFCONFIG" = "" ] && network_default_connect #/usr/sbin
 fi
 

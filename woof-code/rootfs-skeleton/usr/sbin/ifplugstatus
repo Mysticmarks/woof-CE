@@ -40,9 +40,9 @@ detect_link_beat() {
 		return 11
 	fi
 	#--
-	if [ "$OPT_AUTO" ] ; then
-		busybox ifconfig ${1} up
-	fi
+        if [ "$OPT_AUTO" ] ; then
+                ip link set ${1} up
+        fi
 	#--
 	if [ -e /sys/class/net/${1}/carrier ] ; then
 		read carrier < /sys/class/net/${1}/carrier
