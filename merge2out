@@ -3,9 +3,23 @@
 
 WOOF_VERSION=9
 
+case "$1" in
+    --help|-h)
+        cat <<'EOF'
+Usage: merge2out [CONFIG_DIR]
+
+This script merges woof-arch, woof-code,
+woof-distro, kernel-kit and initrd-progs to ../woof-out_*.
+See README.md. It's not advised to use the build system
+in a distro other than a recent WOOFCE Puppy.
+EOF
+        exit 0
+        ;;
+esac
+
 if [ ! -f /etc/rc.d/PUPSTATE -a -z "$GITHUB_ACTIONS" ] ; then
-	echo "It's not advised to use the build system"
-	echo "in a distro other than  a recent WOOFCE Puppy"
+        echo "It's not advised to use the build system"
+        echo "in a distro other than  a recent WOOFCE Puppy"
 	echo
 	echo "You should be able to do the building using run-woof"
 	echo "	https://github.com/puppylinux-woof-CE/run_woof"
