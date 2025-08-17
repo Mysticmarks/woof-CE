@@ -1,5 +1,7 @@
 # woof - the Puppy builder
 
+[![Tests](https://github.com/puppylinux-woof-CE/woof-CE/actions/workflows/lint-test.yml/badge.svg?event=push)](https://github.com/puppylinux-woof-CE/woof-CE/actions/workflows/lint-test.yml)
+
 Currently supported:
 
 | Distro        | Version       | Architecture | Status   |
