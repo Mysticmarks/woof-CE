@@ -1,0 +1,17 @@
+name: lint-and-test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y shellcheck
+    - name: Run ShellCheck
+      run: shellcheck --severity=error merge2out tests/*.sh
+    - name: Run smoke tests
+      run: bash tests/merge2out_help.sh
