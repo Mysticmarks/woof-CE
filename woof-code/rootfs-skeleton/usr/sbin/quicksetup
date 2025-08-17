@@ -278,7 +278,7 @@ if [ "$SET_NETWORK" ];then
  SET_NETWORK=""
  if [ ! -f /var/local/quicksetup-network-check-flag1 ];then
    touch /var/local/quicksetup-network-check-flag2
-    IFCONFIG="`ifconfig | grep '^[pwe]' | grep -v 'wmaster'`" #test network interface up only.
+    IFCONFIG="$(ip -o link show up | awk -F': ' '{print $2}' | grep -E '^[pwe]' | grep -v 'wmaster')" #test network interface up only.
     if [ "$IFCONFIG" ];then
      touch /var/local/quicksetup-network-check-flag1
     fi
