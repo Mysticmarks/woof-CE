@@ -4,11 +4,7 @@ Thank you for your interest in contributing to woof-CE.
 
 ## Development workflow
 - Fork the repository and create your changes on a topic branch.
-- Run `shellcheck --severity=error` on any shell scripts you touch.
-- Execute the smoke tests in `tests/` to ensure key build steps still work:
-  ```bash
-  bash tests/merge2out_help.sh
-  ```
+- Run `./run-tests.sh` to execute ShellCheck and the test suite.
 - Commits should be descriptive and reference related issues when possible.
 
 ## Coding guidelines
