@@ -63,7 +63,7 @@ fi
 grep dhcpcd /var/log/messages > $DIAGSUBDIR/dhcpcd.log
 [ -f /tmp/dhcpcd.log ] && cp -f /tmp/dhcpcd.log $DIAGSUBDIR/dhcpcd_last_viewed.log 2> /dev/null
 iwconfig 2> /dev/null | sed -e 's/\(Encryption key:\).*/\1(removed by pdiag)/' > $DIAGSUBDIR/iwconfig.txt #131211
-ifconfig > $DIAGSUBDIR/ifconfig.txt 2> /dev/null
+ip addr show > $DIAGSUBDIR/ifconfig.txt 2> /dev/null
 cp -f /etc/resolv.conf $DIAGSUBDIR/ 2> /dev/null
 cp -f /etc/resolv.conf.bak $DIAGSUBDIR/ 2> /dev/null
 cp -f /usr/etc/resolvconf.conf.bak $DIAGSUBDIR/ 2> /dev/null
