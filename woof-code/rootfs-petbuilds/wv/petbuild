@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Build the wv library required by AbiWord.
+# Source tarball obtained from Debian's mirrors.
+
+download() {
+    [ -f wv-1.2.9.tar.gz ] || wget -t 3 -T 60 -O wv-1.2.9.tar.gz https://deb.debian.org/debian/pool/main/w/wv/wv_1.2.9.orig.tar.gz
+}
+
+build() {
+    tar -xzf wv-1.2.9.tar.gz
+    cd wv-1.2.9
+    ./configure --prefix=/usr
+    make install
+}
+

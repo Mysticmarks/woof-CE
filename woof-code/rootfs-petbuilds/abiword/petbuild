@@ -5,6 +5,9 @@ download() {
 }
 
 build() {
+    if ! pkg-config --exists wv-1.0; then
+        (cd ../wv && ./petbuild)
+    fi
     tar -xzf abiword-3.0.5.tar.gz
     cd abiword-3.0.5
     patch -p1 < ../enchant-2.1.patch
