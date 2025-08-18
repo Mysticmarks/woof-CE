@@ -1,0 +1,35 @@
+type: object
+required:
+  - stages
+properties:
+  stages:
+    type: array
+    description: Ordered collection of build stages
+    items:
+      type: object
+      required: [name, run]
+      properties:
+        name:
+          type: string
+          description: Unique stage identifier
+        run:
+          type: string
+          description: Command executed for this stage
+        deps:
+          type: array
+          description: Names of prerequisite stages
+          items:
+            type: string
+        artifacts:
+          type: array
+          description: Outputs produced by this stage
+          items:
+            type: object
+            required: [path]
+            properties:
+              path:
+                type: string
+                description: Relative file path of the artifact
+              description:
+                type: string
+                description: Human readable description of the artifact
