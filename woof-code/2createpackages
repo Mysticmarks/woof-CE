@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 #(c) Copyright Barry Kauler 2009.
 # grab binary ubuntu/debian/slackware packages and build puppy packages.
 # to packages-$DISTRO_FILE_PREFIX/, into the "generic name". Note that one generic
