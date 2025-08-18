@@ -66,6 +66,29 @@ Woof-CE has five directories:
   - `build.sh`           : builds the kernel based on the configuration defined in build.conf.
 - initrd-progs: scripts and files to generate the initial ramdisk
 
+# Containerized builds
+
+woof-CE ships scripts and container definitions that provide a pinned
+toolchain for reproducible builds without having to prepare a host
+environment.
+
+Build the image:
+
+```
+./containers/build.sh
+```
+
+Run any pipeline command inside the container:
+
+```
+./run-in-container.sh ./merge2out
+```
+
+The helper scripts default to Podman when available and fall back to
+Docker.  A different container image can be used by exporting the
+`WOOF_CONTAINER_IMAGE` variable, and the runtime may be overridden via
+`CONTAINER_RUNTIME`.
+
 # Preparation
 
 1. Suitable build environment
