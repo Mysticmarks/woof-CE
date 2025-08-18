@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 #(c) Copyright 2009 Barry Kauler.
 #120825 debian/ubuntu: merge -updates dbs.
 #121102 file DISTRO_SPECS has new variable DISTRO_DB_SUBNAME. ex: for 14.0-based slacko, DISTRO_DB_SUBNAME=slacko14

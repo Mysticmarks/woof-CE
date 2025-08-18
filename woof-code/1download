@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 #(c) Copyright 2009 Barry Kauler.
 #110819 support/findpkgs is new script to find all pkgs to be used in Puppy build.
 

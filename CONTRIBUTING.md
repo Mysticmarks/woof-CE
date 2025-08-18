@@ -10,6 +10,7 @@ Thank you for your interest in contributing to woof-CE.
 ## Coding guidelines
 - Shell scripts should target POSIX `sh` unless `bash` features are required.
 - Avoid style warnings reported by ShellCheck where practical.
+- Begin each shell script with `set -euo pipefail` after the shebang to enforce strict error handling.
 - Keep scripts small and composable; functions are preferred over large blocks.
 
 ## Reporting issues

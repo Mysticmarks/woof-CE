@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 # new for fatdog style kernel
 
 export LANG=C #faster.
