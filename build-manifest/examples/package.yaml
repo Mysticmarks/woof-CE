@@ -1,0 +1,19 @@
+stages:
+  - name: fetch-src
+    run: ./fetch-source.sh
+    deps: []
+    artifacts:
+      - path: src.tar.gz
+        description: Source code archive
+  - name: build
+    run: ./build.sh
+    deps: [fetch-src]
+    artifacts:
+      - path: pkg.txz
+        description: Compiled package
+  - name: install
+    run: ./install.sh
+    deps: [build]
+    artifacts:
+      - path: /tmp/pkg-installed
+        description: Installation directory

@@ -1,0 +1,19 @@
+stages:
+  - name: fetch-kernel
+    run: ./fetch-kernel.sh
+    deps: []
+    artifacts:
+      - path: kernel-source.tar.gz
+        description: Downloaded kernel sources
+  - name: compile-kernel
+    run: ./compile-kernel.sh
+    deps: [fetch-kernel]
+    artifacts:
+      - path: bzImage
+        description: Compiled kernel image
+  - name: package-kernel
+    run: ./package-kernel.sh
+    deps: [compile-kernel]
+    artifacts:
+      - path: kernel.txz
+        description: Compressed kernel package
