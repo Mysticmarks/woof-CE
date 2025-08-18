@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "plugins.setup.SetupPlugin",
+    "plugins.download.DownloadPlugin",
+    "plugins.createpackages.CreatePackagesPlugin",
+    "plugins.builddistro.BuildDistroPlugin"
+  ]
+}
