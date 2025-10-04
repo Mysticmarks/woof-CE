@@ -131,6 +131,7 @@ APT::Autoremove::SuggestsImportant "false";
 EOF
 chroot bdrv apt-get update
 chroot bdrv apt-get upgrade -y
+chroot bdrv apt modernize-sources -y
 
 # blacklist packages that may conflict with packages in the main SFS
 chroot bdrv apt-mark hold busybox
