@@ -75,12 +75,6 @@ fi
 
 imgFile="$1"
 [ ! -f "$imgFile" ] && echo "No regular file: $imgFile" && exit 1
-for f in puppy_ drv_ docx_ nlsx_ kbuild " ";
-do
-  if [[ $(echo "$imgFile" | grep "$f") ]];then
-    /usr/lib/gtkdialog/box_ok "Warning" warning "<b>$(gettext 'WARNING!')</b>" "$(gettext 'Seems to be a SYSTEM FILE or has spaces in filename')" "$(gettext 'You can safely VIEW (mount) and unmount it')" " " "$(gettext 'BUT IF YOU INSTALL (load) or UNINSTALL (unload) or QUEUE it')" "$(gettext 'YOU WILL LIKELY TRASH YOUR SYSTEM!')" && break
-  fi
-done
 imgFileBASE=${imgFile##*/} ## imgFileBASE="`basename "$imgFile"`" #BK
 [ "$(dirname "$imgFile")" = "." ] && imgFile=$(pwd)/${imgFileBASE}
 
