@@ -3,6 +3,8 @@
 # sfwbar config by 01micko
 # GPLv2 (/usr/share/doc/legal)
 # radky: update 1 Aug 2025
+# 251020 peebee: add Edit taskbar config 
+# 251021 wizard: add toggle visible/autohide
 
 CONF=$HOME/.config/sfwbar/extrabar.conf
 rm -f /tmp/sfwlaunch*.lst /tmp/launcher_selected 2>/dev/null
@@ -11,6 +13,18 @@ rm -f /tmp/sfwlaunch*.lst /tmp/launcher_selected 2>/dev/null
 ln -sf /usr/share/pixmaps/puppy/desktop_tray_config.svg /usr/share/icons/hicolor/48x48/apps && gtk-update-icon-cache -f -i /usr/share/icons/hicolor 2>/dev/null
 
 #----------------------------- functions  -----------------------------#
+
+toggle_visible() {
+#check if bar is autohide
+bhide=$(grep "SetBarSensor \"launcher\", \"500\"" /root/.config/sfwbar/sfwbar.config)
+#toggle launchbar autohide or visible
+if [ ! -z "$bhide" ]; then
+   sed -i 's/SetBarSensor \"launcher\", \"500\"/SetBarSensor \"launcher\", \"0\"/' /root/.config/sfwbar/sfwbar.config
+ else
+   sed -i 's/SetBarSensor \"launcher\", \"0\"/SetBarSensor \"launcher\", \"500\"/' /root/.config/sfwbar/sfwbar.config  
+fi
+} 
+export -f toggle_visible
 
 current_launchbar_apps() {
     CLAPPS=`cat /tmp/sfwlaunchE.lst | cut -d'|' -f2- | cut -d'|' -f2`
@@ -523,12 +537,22 @@ export GUI='<window title="SFWBar Configuration" icon-name="desktop_tray_config"
         </hbox>
         <text space-expand="false" space-fill="false"><label>" "</label></text>
         <hbox>
+            <checkbox tooltip-text=" '$(gettext 'Visible or Autohide')' ">
+              <label>'$(gettext "Toggle Visible/Autohide")'</label>
+              <input>echo '$TOGGLE_VISIBLE'</input>
+              <variable>TOGGLE_VISIBLE</variable>
+              <action>if true toggle_visible</action>
+              <action>if false toggle_visible</action>
+              <action>refresh:LAUNCHERAPP</action>
+            </checkbox>
+            <text space-expand="true" space-fill="true"><label>" "</label></text>
+        </hbox>
+        <hbox>
             <checkbox tooltip-text=" '$(gettext 'Restore default launchbar applications')' ">
               <label>'$(gettext "Restore default launchbar")'</label>
               <input>echo '$DEFAULT_LAUNCHBAR'</input>
               <variable>DEFAULT_LAUNCHBAR</variable>
               <action>if true default_launchbar</action>
-              <action>if false default_launchbar</action>
               <action>refresh:LAUNCHERAPP</action>
             </checkbox>
             <text space-expand="true" space-fill="true"><label>" "</label></text>
