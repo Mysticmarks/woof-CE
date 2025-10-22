@@ -542,7 +542,6 @@ export GUI='<window title="SFWBar Configuration" icon-name="desktop_tray_config"
               <input>echo '$TOGGLE_VISIBLE'</input>
               <variable>TOGGLE_VISIBLE</variable>
               <action>if true toggle_visible</action>
-              <action>if false toggle_visible</action>
               <action>refresh:LAUNCHERAPP</action>
             </checkbox>
             <text space-expand="true" space-fill="true"><label>" "</label></text>
@@ -553,6 +552,7 @@ export GUI='<window title="SFWBar Configuration" icon-name="desktop_tray_config"
               <input>echo '$DEFAULT_LAUNCHBAR'</input>
               <variable>DEFAULT_LAUNCHBAR</variable>
               <action>if true default_launchbar</action>
+              <action>if false default_launchbar</action>
               <action>refresh:LAUNCHERAPP</action>
             </checkbox>
             <text space-expand="true" space-fill="true"><label>" "</label></text>
