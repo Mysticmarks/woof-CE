@@ -1,4 +1,4 @@
-name: dpup-kernel
+name: dpup-trixie32-kernel
 
 on:
   schedule:
