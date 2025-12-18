@@ -1,4 +1,4 @@
-name: kernel-kit
+name: kernel-kit-k6series
 
 on:
   schedule:
