@@ -1,4 +1,4 @@
-name: kernel-kit-k6series
+name: kernel-kit-k6.1-k6.12
 
 on:
   schedule:
@@ -27,10 +27,6 @@ jobs:
             image: debian:bookworm-slim
           - kernel-kit-config: 6.12.x-x86_64
             image: debian:bookworm-slim
-          - kernel-kit-config: 6.18.x-x86
-            image: debian:trixie-slim
-          - kernel-kit-config: 6.18.x-x86_64
-            image: debian:trixie-slim
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
@@ -62,7 +58,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        kernel-kit-config: [6.1.x-x86, 6.1.x-x86_64, 6.6.x-x86, 6.6.x-x86_64, 6.12.x-x86, 6.12.x-x86_64, 6.18.x-x86, 6.18.x-x86_64]
+        kernel-kit-config: [6.1.x-x86, 6.1.x-x86_64, 6.6.x-x86, 6.6.x-x86_64, 6.12.x-x86, 6.12.x-x86_64]
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
