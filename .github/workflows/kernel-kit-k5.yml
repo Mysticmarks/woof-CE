@@ -2,7 +2,7 @@ name: kernel-kit-k5series
 
 on:
   schedule:
-    - cron: '0 0 1,30 * *'
+    - cron: '0 0 1 * *'
   workflow_dispatch:
 
 jobs:
