@@ -3,6 +3,7 @@ name: void-voidpup
 on:
   schedule:
     - cron: '0 0 2,16 * *'
+  workflow_dispatch:
 
 jobs:
   build:
