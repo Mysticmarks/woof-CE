@@ -16,9 +16,9 @@ jobs:
       matrix:
         include:
           - kernel-kit-config: 6.12.x-x86
-            image: debian:bookworm-slim
+            image: debian:bookworm
           - kernel-kit-config: 6.12.x-x86_64
-            image: debian:bookworm-slim
+            image: debian:bookworm
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
@@ -46,7 +46,7 @@ jobs:
     needs: build
     runs-on: ubuntu-22.04
     container:
-      image: debian:bullseye-slim
+      image: debian:bullseye
     continue-on-error: true
     strategy:
       matrix:
