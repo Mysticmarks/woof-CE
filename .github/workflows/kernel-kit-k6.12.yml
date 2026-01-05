@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     if: github.event_name != 'schedule' || (github.repository == 'puppylinux-woof-CE/woof-CE' && github.ref == 'refs/heads/testing')
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     container:
       image: ${{ matrix.image }}
     continue-on-error: true
@@ -16,9 +16,9 @@ jobs:
       matrix:
         include:
           - kernel-kit-config: 6.12.x-x86
-            image: debian:bookworm
+            image: debian:trixie-slim
           - kernel-kit-config: 6.12.x-x86_64
-            image: debian:bookworm
+            image: debian:trixie-slim
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
@@ -44,9 +44,9 @@ jobs:
   usrmerge:
     if: github.event_name != 'schedule' || (github.repository == 'puppylinux-woof-CE/woof-CE' && github.ref == 'refs/heads/testing')
     needs: build
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     container:
-      image: debian:bullseye
+      image: debian:trixie-slim
     continue-on-error: true
     strategy:
       matrix:
