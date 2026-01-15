@@ -20,9 +20,9 @@ jobs:
           - kernel-kit-config: 6.1.x-x86_64
             image: debian:bookworm-slim
           - kernel-kit-config: 6.6.x-x86
-            image: debian:trixie-slim
+            image: debian:bookworm-slim
           - kernel-kit-config: 6.6.x-x86_64
-            image: debian:trixie-slim
+            image: debian:bookworm-slim
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
