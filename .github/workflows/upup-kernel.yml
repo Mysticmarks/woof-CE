@@ -15,7 +15,7 @@ jobs:
         - /usr:/hostusr
     strategy:
       matrix:
-        release: [jammy, noble]
+        release: [noble, resolute]
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
