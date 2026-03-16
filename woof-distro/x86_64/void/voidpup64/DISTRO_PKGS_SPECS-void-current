@@ -334,7 +334,6 @@ yes|libvorbis|libvorbis|exe,dev,doc,nls
 yes|libvpx|libvpx,libvpx-tools|exe,dev,doc,nls
 yes|libwebp|libwebp,libsharpyuv|exe,dev,doc,nls
 yes|libx86|libx86|exe,dev,doc,nls
-yes|libxatracker|libxatracker|exe,dev,doc,nls
 yes|libxcb_base|libxcb|exe,dev,doc,nls
 yes|libXfont2|libXfont2|exe,dev,doc,nls
 yes|libxkbcommon|libxkbcommon|exe,dev,doc,nls
