@@ -222,7 +222,7 @@ fi
 log_msg "kernel_version=${kernel_version}"
 log_msg "kernel_version_info=${kernel_version_info}"
 case "$kernel_version" in
-	3.*|4.*|5.*|6.*) ok=1 ;; #----
+	3.*|4.*|5.*|6.*|7.*) ok=1 ;; #----
 	*) exit_error "ERROR: Unsupported kernel version" ;;
 esac
 
