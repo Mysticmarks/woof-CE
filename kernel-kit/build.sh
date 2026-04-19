@@ -238,6 +238,7 @@ aufs_git_3="https://github.com/puppylinux-woof-CE/aufs3-standalone.git"
 aufs_git_4="https://github.com/sfjro/aufs4-standalone.git"
 aufs_git_5="https://github.com/sfjro/aufs-standalone.git"
 aufs_git_6="https://github.com/sfjro/aufs-standalone.git"
+aufs_git_7="https://github.com/sfjro/aufs-standalone.git"
 [ ! "$kernel_mirrors" ] && kernel_mirrors="https://www.kernel.org/pub/linux/kernel"
 ksubdir_3=v3.x #http://www.kernel.org/pub/linux/kernel/v3.x
 ksubdir_4=v4.x
@@ -344,7 +345,7 @@ case $kernel_series in
 	4) ksubdir=${ksubdir_4} ; aufs_git=${aufs_git_4} ; aufs_git_dir=aufs4_sources_git ;;
 	5) ksubdir=${ksubdir_5} ; aufs_git=${aufs_git_5} ; aufs_git_dir=aufs5_sources_git ;;
 	6) ksubdir=${ksubdir_6} ; aufs_git=${aufs_git_6} ; aufs_git_dir=aufs6_sources_git ;;
-	7) ksubdir=${ksubdir_7} ; aufs_git=${aufs_git_7} ; aufs_git_dir=aufs6_sources_git ;;
+	7) ksubdir=${ksubdir_7} ; aufs_git=${aufs_git_7} ; aufs_git_dir=aufs7_sources_git ;;
 esac
 
 ## create directories for the results
