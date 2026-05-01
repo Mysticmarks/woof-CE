@@ -1,4 +1,4 @@
-Woof-CE (woof-Community Edition) is  a fork of Barry Kauler's woof2 fossil
+Woof-CE (woof-Community Edition) is  a fork of Barry Kauler's woof2 fossil 
 
 These are some prominent changes that happened since WOOF was forked:
 - download_file.sh now uses aria2c or curl when available for faster, more robust downloads
